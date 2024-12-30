@@ -1,0 +1,15 @@
+{
+    "cSpell.words": [
+        "astro",
+        "astrojs"
+    ],
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "astro-build.astro-vscode",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}
