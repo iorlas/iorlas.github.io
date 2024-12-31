@@ -1,0 +1,87 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Base.astro";
+import Container from "../../components/Container.astro";
+import { Breadcrumbs } from "astro-breadcrumbs";
+import "astro-breadcrumbs/breadcrumbs.css";
+
+export async function getStaticPaths() {
+  const items = await getCollection("kb");
+
+  return items.map((item) => ({
+    // Otherwise it will not recognize the root index as /
+    params: { slug: item.slug == "index" ? "" : item.slug },
+    props: item,
+  }));
+}
+
+const {
+  slug,
+  render,
+  data: { title, excerpt, publishDate, updatedDate, image },
+} = Astro.props;
+const displayedDate = updatedDate || publishDate;
+
+// Because the root-root index slug is "index", while in subfolders it is just an empty string
+const indexlessSlug = slug.endsWith("index") ? slug.slice(0, slug.length - "index".length) : slug;
+
+const childrenLevel1 = await getCollection("kb", (item) => {
+  return (
+    item.slug
+    && item.slug.startsWith(indexlessSlug)
+    && item.slug !== slug
+    // check postfix, taking only 1 level deep paths
+    && item.slug.slice(indexlessSlug.length+1).split("/").length < 2)
+});
+
+
+const { Content, remarkPluginFrontmatter } = await render();
+---
+
+<Layout title={title} description={excerpt}>
+  <Container>
+    <div class="mx-auto max-w-3xl mt-14">
+      <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+        <Breadcrumbs excludeCurrentPage={true} />
+        {
+          // category
+        }
+      </span>
+      <h1
+        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight"
+      >
+        {title}
+      </h1>
+      <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
+        {
+          displayedDate && (
+            <time class="text-gray-400" datetime={displayedDate.toISOString()}>
+              {displayedDate.toDateString()}
+            </time>
+            <span class="text-gray-400 hidden md:block">•</span>
+          )
+        }
+        <div class="w-full md:w-auto flex flex-wrap gap-3">
+          <span class="text-sm text-gray-500">{remarkPluginFrontmatter.minutesRead}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto prose prose-lg mt-6 max-w-3xl">
+      <Content />
+    </div>
+
+    
+    {!!childrenLevel1.length && (
+      <div class="mx-auto prose prose-lg mt-6 max-w-3xl">
+        <h2>Pages in this category</h2>
+        <ul class="list-disc">
+          {childrenLevel1.map((item) => (
+            <li><a href={"/kb/" + item.slug}>{item.data.title}</a></li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+  </Container>
+</Layout>
