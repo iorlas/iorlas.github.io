@@ -1,3 +1,35 @@
 media:
   input: "src/assets"
   output: "src/assets"
+
+content:
+  - name: kb
+    label: Posts
+    path: src/_posts
+    type: collection
+    fields:
+      - name: isDraft
+        label: Published
+        type: boolean
+        default: false
+        required: true
+      - name: publishDate
+        label: Publish Date
+        type: date
+        required: true
+      - name: updatedDate
+        label: Updated Date
+        type: date
+        required: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: excerpt
+        label: Excerpt
+        type: string
+        required: true
+      - name: body
+        label: Body
+        type: rich-text
+        required: true
