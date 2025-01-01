@@ -5,7 +5,7 @@ media:
 content:
   - name: kb
     label: Posts
-    path: src/_posts
+    path: src/content/kb
     type: collection
     fields:
       - name: isDraft
