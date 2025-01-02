@@ -1,13 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import { buildStaticPaths, getChildren } from "../../utils/astro";
-
-import Layout from "../../layouts/Base.astro";
-import Container from "../../components/Container.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Layout from "../layouts/Base.astro";
+import Container from "../components/Container.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { buildStaticPaths, getChildren } from "../utils/astro";
 
 export async function getStaticPaths() {
-  return buildStaticPaths(await getCollection("kb"));
+  return buildStaticPaths(await getCollection("page"));
 }
 
 const {
@@ -16,10 +15,9 @@ const {
   data: { title, excerpt, publishDate, updatedDate, image },
 } = Astro.props;
 const displayedDate = updatedDate || publishDate;
+
+
 const { Content, remarkPluginFrontmatter } = await render();
-
-const childrenLevel1 = getChildren(await getCollection("kb"), slug);
-
 ---
 
 <Layout title={title} description={excerpt}>
@@ -51,18 +49,6 @@ const childrenLevel1 = getChildren(await getCollection("kb"), slug);
     <div class="mx-auto prose prose-lg mt-6 max-w-3xl">
       <Content />
     </div>
-
-    
-    {!!childrenLevel1.length && (
-      <div class="mx-auto prose prose-lg mt-6 max-w-3xl">
-        <h2>Pages in this Category</h2>
-        <ul class="list-disc">
-          {childrenLevel1.map((item) => (
-            <li><a href={"/kb/" + item.slug}>{item.data.title}</a></li>
-          ))}
-        </ul>
-      </div>
-    )}
 
   </Container>
 </Layout>
