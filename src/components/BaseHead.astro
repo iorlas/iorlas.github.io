@@ -1,5 +1,6 @@
 ---
 import PostHog from "../components/posthog.astro";
+import GA from "../components/ga.astro";
 import "../styles/base.css";
 
 interface Props {
@@ -15,21 +16,8 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 // SEO
 ---
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FXW5SEENJM"
-></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-
-  gtag("config", "G-FXW5SEENJM");
-</script>
-
-<!-- PostHog -->
 <PostHog />
+<GA />
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
