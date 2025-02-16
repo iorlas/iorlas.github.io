@@ -4,7 +4,7 @@ const BaseContent = z.object({
   isDraft: z.boolean().default(false),
   image: z.string().optional(),
   title: z.string(),
-  excerpt: z.string().min(50).max(160),
+  excerpt: z.string().min(5).max(160),
   publishDate: z
     .string()
     .optional()
