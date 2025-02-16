@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Base.astro";
 import Container from "../components/Container.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { buildStaticPaths, getChildren } from "../utils/astro";
+import { buildStaticPaths } from "../utils/astro";
 
 export async function getStaticPaths() {
   return buildStaticPaths(await getCollection("page"));
@@ -20,7 +20,7 @@ const displayedDate = updatedDate || publishDate;
 const { Content, remarkPluginFrontmatter } = await render();
 ---
 
-<Layout title={title} description={excerpt}>
+<Layout title={title} description={excerpt} image={image} slug={slug}>
   <Container>
     <div class="mx-auto max-w-3xl mt-14">
       <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">

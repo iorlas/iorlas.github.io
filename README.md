@@ -14,3 +14,8 @@ All commands are run from the root of the project, from a terminal:
 # CMS
 
 https://app.pagescms.org/
+
+
+# charts
+
+d2

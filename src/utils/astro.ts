@@ -1,10 +1,4 @@
-import {
-  getCollection,
-  type AnyEntryMap,
-  type CollectionEntry,
-  type DataEntryMap,
-  type Flatten,
-} from "astro:content";
+import { type AnyEntryMap, type CollectionEntry } from "astro:content";
 
 export function buildStaticPaths<
   C extends keyof AnyEntryMap,
