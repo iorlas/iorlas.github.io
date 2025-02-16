@@ -18,4 +18,3 @@ There are quite a few different kinds of knowledge bases:
 - [Health](/kb/health) *WIP*. Body & Soul.
 - [Travel](/kb/travel) *WIP*.
 - [Domains](/kb/domains) *WIP*. Healthcare, Finance, Retail, Travel, etc.
-
