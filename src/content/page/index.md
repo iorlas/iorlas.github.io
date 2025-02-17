@@ -1,5 +1,6 @@
 ---
 # publishDate: 2023-07-15T00:00:00Z
+isDraft: false
 title: 'Hey yo!'
 excerpt: 'All the information is getting there or somewhere, ye'
 ---

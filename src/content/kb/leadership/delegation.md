@@ -1,5 +1,5 @@
 ---
-isDraft: true
+isDraft: false
 publishDate: 2025-02-12
 updatedDate: 2025-02-16
 title: "Leadership: Delegation"

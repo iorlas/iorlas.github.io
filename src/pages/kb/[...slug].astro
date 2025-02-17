@@ -5,9 +5,10 @@ import { buildStaticPaths, getChildren } from "../../utils/astro";
 import Layout from "../../layouts/Base.astro";
 import Container from "../../components/Container.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
 
 export async function getStaticPaths() {
-  return buildStaticPaths(await getCollection("kb"));
+  return buildStaticPaths(await getCollection("kb", (item) => item.data.isDraft !== false));
 }
 
 const {
@@ -16,7 +17,7 @@ const {
   data: { title, excerpt, publishDate, updatedDate, image },
 } = Astro.props;
 const displayedDate = updatedDate || publishDate;
-const { Content, remarkPluginFrontmatter } = await render();
+const { Content, remarkPluginFrontmatter, headings } = await render();
 
 const childrenLevel1 = getChildren(await getCollection("kb"), slug);
 
@@ -24,6 +25,7 @@ const childrenLevel1 = getChildren(await getCollection("kb"), slug);
 
 <Layout title={title} description={excerpt} image={image}>
   <Container>
+    <TableOfContents headings={headings} />
     <div class="mx-auto max-w-3xl mt-14">
       <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
         <Breadcrumbs />
