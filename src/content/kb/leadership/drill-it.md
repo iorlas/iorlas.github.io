@@ -1,5 +1,5 @@
 ---
-isDraft: true
+isDraft: false
 publishDate: 2025-02-10
 updatedDate: 2025-02-17
 title: "Engineer to IT Manager: The Essential Drill"
