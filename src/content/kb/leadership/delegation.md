@@ -37,7 +37,7 @@ Keep It Simple, Stupid. Start with it, apply it everywhere until you will get th
 
 Most important: Expect the same strategy to be applied on you. And when it is not applied on your correctly - help the others by asking the right questions.
 
-A **delegation expert** excels both in **assigning** tasks effectively and in **executing** delegated tasks strategically.
+A **delegation expert** not only **assigns** tasks effectively but also **facilitates their delegation** from higher management.
 
 ## References
 
