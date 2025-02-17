@@ -9,7 +9,11 @@ async function getChildren(basePath) {
   const base = await getCollection("kb", (item) => item.data.isDraft === false);
   const filtered = base.filter(
     (item) =>
-      item.slug && item.slug.startsWith(basePath) && item.slug != basePath
+      item.slug &&
+      item.slug.startsWith(basePath) &&
+      item.slug != basePath &&
+      // check postfix, taking only 1 level deep paths
+      item.slug.slice(basePath.length + 1).split("/").length < 2
   );
   return filtered.map((item) => ({
     title: item.data.title,
@@ -17,27 +21,16 @@ async function getChildren(basePath) {
   }));
 }
 
-const abc = await getChildren("leadership");
-console.log(abc);
-
 const menuitems = [
   {
     title: "IT Notes",
     path: "#",
-    children: [
-      { title: "All", path: "/kb/it" },
-      { title: "Architecture", path: "/kb/it/architecture" },
-      { title: "AI", path: "/kb/it/ai" },
-      { title: "State of IT", path: "/kb/it/state-of-it" },
-    ],
+    children: await getChildren("it"),
   },
   {
     title: "Leadership Notes",
     path: "#",
-    children: [
-      { title: "All", path: "/kb/leadership" },
-      ...(await getChildren("leadership")),
-    ],
+    children: await getChildren("leadership"),
   },
   {
     title: "Travel Notes",
