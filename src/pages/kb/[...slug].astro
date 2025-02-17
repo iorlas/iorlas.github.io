@@ -8,7 +8,7 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import TableOfContents from "../../components/TableOfContents.astro";
 
 export async function getStaticPaths() {
-  return buildStaticPaths(await getCollection("kb", (item) => item.data.isDraft !== false));
+  return buildStaticPaths(await getCollection("kb", (item) => item.data.isDraft === false));
 }
 
 const {
@@ -19,7 +19,7 @@ const {
 const displayedDate = updatedDate || publishDate;
 const { Content, remarkPluginFrontmatter, headings } = await render();
 
-const childrenLevel1 = getChildren(await getCollection("kb"), slug);
+const childrenLevel1 = getChildren(await getCollection("kb", (item) => item.data.isDraft === false), slug);
 
 ---
 
