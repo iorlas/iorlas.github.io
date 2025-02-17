@@ -6,6 +6,7 @@ import sitemap from "@astrojs/sitemap";
 
 import tailwind from "@astrojs/tailwind";
 import { remarkReadingTime } from "./src/utils/remark-reading-time";
+import rehypeExternalLinks from "rehype-external-links";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,5 +14,8 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
     remarkPlugins: [remarkReadingTime],
+    rehypePlugins: [
+      [rehypeExternalLinks, { target: "_blank", rel: ["noopener"] }],
+    ],
   },
 });
