@@ -1,8 +1,24 @@
 ---
+import { getCollection } from "astro:content";
 import Container from "../../components/Container.astro";
 // import Link from "../../components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+
+async function getChildren(basePath) {
+  const base = await getCollection("kb", (item) => item.data.isDraft === false);
+  const filtered = base.filter(
+    (item) =>
+      item.slug && item.slug.startsWith(basePath) && item.slug != basePath
+  );
+  return filtered.map((item) => ({
+    title: item.data.title,
+    path: `/kb/${item.slug}`,
+  }));
+}
+
+const abc = await getChildren("leadership");
+console.log(abc);
 
 const menuitems = [
   {
@@ -20,7 +36,7 @@ const menuitems = [
     path: "#",
     children: [
       { title: "All", path: "/kb/leadership" },
-      // { title: "Architecture", path: "/kb/leadership/" },
+      ...(await getChildren("leadership")),
     ],
   },
   {
