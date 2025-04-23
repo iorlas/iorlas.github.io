@@ -7,10 +7,6 @@ title: Istanbul
 
 Türkiye is a huge country. Some cities are countries on it's own. This page has a lot of information which applies to every city, yet feel free to open up city-specific page for a lot of additional information!
 
-### City-specific pages
-
-- [Istanbul](turkiye/istanbul)
-- [Alanya & Mahmutlar](turkiye/alanya)
 
 
 Hey! So, this is a collection of my travel notes.
