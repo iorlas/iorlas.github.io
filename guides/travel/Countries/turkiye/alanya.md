@@ -37,7 +37,8 @@ But have a sense of prices: 100 USD ± 3500 TRY. Can Taxi cost 1000 TRY? Unlikel
 ## Phone/SIM
 
 - *Not tested*. You can purchase eSIM before leaving your own country - https://www.turkcell.com.tr/servisler/turkcell-e-sim . It should get activated in like an hour.
-- Purchase like 2-5 GB eSIM via Airalo or similar service. Arrive to Turkiye. Exit the airport, find the Turkcell or Vodafone authorized office (it will be branded both externally and internally! some shops are faking it), and purchase sim card cheap and fast. Beware: make sure sim card will be purchased to your name, you will need to give your passport.
+- Purchase like 20 GB eSIM via Airalo, it is quite cheap nowadays.
+- Purchase a sim locally. Arrive to Turkiye. Exit the airport, find the Turkcell or Vodafone authorized office (it will be branded both externally and internally! some shops are faking it), and purchase sim card cheap and fast. Beware: make sure sim card will be purchased to your name, you will need to give your passport.
 
 Also, keep in mind, if you're going to stay in Turkey for less than 90 days, you don't need to register your IMEI. Otherwise, according to Turkish laws, foreigners staying in Turkey for more than 90 days have 90 days to 180 days before the IMEI is blocked. 
 
@@ -50,7 +51,7 @@ Traditional. See Istanbul - pretty much the same.
 The only three places which are totally different and deserve additional attention:
 - [Chaihana #1](https://maps.app.goo.gl/ddZdbwkh8DzR593p9). Asian food. Hand-made noodles, meat, large portions, cheap/moderate cost. IT IS SO DELICIOUS! Better only in Kazakhstan.
 - [Dodo pizza](https://maps.app.goo.gl/W327154DjL6ZYPr26). Western food. Many different combos. Cheap/moderate cost. Very tasty!
-- [Big Chefs](https://maps.app.goo.gl/kbTEkAyfyaVK5Xsd6). Western food, some turkish as well. Ain't cheap, but good quality. Big Chief caffess and restaurants are located in many places across Turkiye. 
+- [Big Chefs](https://maps.app.goo.gl/kbTEkAyfyaVK5Xsd6). Western food, some turkish as well. Ain't cheap, but good quality. Big Chief cafes and restaurants are located in many places across Turkiye. 
 
 Aside from it, there are those places which are common, generally available, and serve food which we like:
 - McDonalds
