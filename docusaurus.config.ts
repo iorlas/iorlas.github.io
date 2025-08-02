@@ -1,6 +1,6 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type { Config } from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -70,6 +70,9 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        googleTagManager: {
+          containerId: 'GTM-MKL37N3C',
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -90,10 +93,10 @@ const config: Config = {
         //   position: 'left',
         //   label: 'Tutorial',
         // },
-        {to: '/guides/it-squad-ops', label: 'Guide: IT Squad Ops', position: 'left'},
-        {to: '/guides/travel', label: 'Guide: Travel', position: 'left'},
+        { to: '/guides/it-squad-ops', label: 'Guide: IT Squad Ops', position: 'left' },
+        { to: '/guides/travel', label: 'Guide: Travel', position: 'left' },
         // {to: '/blog', label: 'Blog', position: 'left'},
-        {href: 'https://x.com/iorlasd', label: 'Twitter', position: 'right'},
+        { href: 'https://x.com/iorlasd', label: 'Twitter', position: 'right' },
         {
           href: 'https://github.com/iorlas',
           label: 'GitHub',
@@ -131,7 +134,7 @@ const config: Config = {
             {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/in/denis-tomilin-28866686/',
-              
+
             },
             {
               label: 'X',
