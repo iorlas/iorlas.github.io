@@ -1,96 +1,194 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
 <Layout title="Denis Tomilin — AI Architect">
-  <main class="mx-auto max-w-2xl px-6 py-16 sm:py-24">
+  <main class="mx-auto max-w-2xl px-6 pt-16 pb-24 sm:pt-28 sm:pb-32">
 
     <!-- Hero -->
-    <section class="mb-16 sm:mb-20">
-      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-3">
-        Denis Tomilin
-      </h1>
-      <p class="text-lg sm:text-xl text-gray-500 mb-6">
-        AI Architect &middot; Istanbul, Turkiye
+    <section class="mb-20 sm:mb-24">
+      <div class="flex items-start gap-6 mb-8">
+        <!-- Photo placeholder -->
+        <div class="shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center">
+          <span class="text-gray-300 text-2xl sm:text-3xl font-semibold">DT</span>
+        </div>
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 mb-1">
+            Denis Tomilin
+          </h1>
+          <p class="text-base sm:text-lg text-gray-400 flex items-center gap-1.5">
+            <Icon name="map-pin" size={14} class="inline text-gray-300" />
+            Istanbul, Turkiye
+          </p>
+        </div>
+      </div>
+
+      <p class="text-lg sm:text-xl leading-relaxed text-gray-900">
+        I design agentic AI systems and help companies actually ship them.
       </p>
-      <p class="text-lg leading-relaxed">
-        I design agentic AI systems and drive enterprise AI adoption.
+      <p class="text-base sm:text-lg leading-relaxed mt-3">
         Solutions Architect at <a href="https://dataart.com" class="text-coral hover:text-coral-hover transition-colors" target="_blank" rel="noopener">DataArt</a>,
-        building AI Lab offerings that ship multi-agent systems, MCP patterns, and Claude Code tooling to production.
+        where I build the AI Lab practice — multi-agent architectures, MCP patterns, and Claude Code tooling
+        that makes it from prototype to production.
       </p>
     </section>
 
     <!-- Credentials -->
-    <section class="mb-16 sm:mb-20">
-      <h2 class="text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-6">Background</h2>
-      <ul class="space-y-3 text-base leading-relaxed">
-        <li>
-          <span class="text-gray-900 font-medium">DataArt</span> — 8+ years. US-headquartered technology consultancy. Currently building the AI Lab practice.
-        </li>
-        <li>
-          <span class="text-gray-900 font-medium">Ex-CTO</span> — Grand Capital. Led engineering and product for a financial services company.
-        </li>
-        <li>
-          <span class="text-gray-900 font-medium">Stripe Certified</span> — Professional Developer, certificates #4 and #5 globally.
-        </li>
-      </ul>
-    </section>
+    <section class="mb-20 sm:mb-24">
+      <h2 class="flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-8">
+        <Icon name="briefcase" size={14} class="text-gray-300" />
+        Background
+      </h2>
 
-    <!-- What I Build -->
-    <section class="mb-16 sm:mb-20">
-      <h2 class="text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-6">What I Build</h2>
-      <div class="space-y-4 text-base leading-relaxed">
-        <div>
-          <span class="text-gray-900 font-medium">Agentic AI systems</span> —
-          Multi-agent architectures, tool orchestration, and MCP server patterns for enterprise clients.
+      <div class="space-y-6">
+        <div class="flex gap-4">
+          <div class="shrink-0 mt-1">
+            <div class="w-8 h-8 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center">
+              <Icon name="building" size={16} class="text-gray-400" />
+            </div>
+          </div>
+          <div>
+            <p class="text-gray-900 font-medium">DataArt</p>
+            <p class="text-sm leading-relaxed mt-0.5">8+ years at a US-headquartered technology consultancy. Currently building the AI Lab — the practice that helps enterprise clients go from "we should use AI" to working systems.</p>
+          </div>
         </div>
-        <div>
-          <span class="text-gray-900 font-medium">Kay</span> —
-          Personal knowledge operating system built with Claude Code. Semantic search, entity resolution, structured capture.
+
+        <div class="flex gap-4">
+          <div class="shrink-0 mt-1">
+            <div class="w-8 h-8 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center">
+              <Icon name="zap" size={16} class="text-gray-400" />
+            </div>
+          </div>
+          <div>
+            <p class="text-gray-900 font-medium">Ex-CTO, Grand Capital</p>
+            <p class="text-sm leading-relaxed mt-0.5">Led engineering and product for a financial services company. Full stack from infrastructure to product decisions.</p>
+          </div>
         </div>
-        <div>
-          <span class="text-gray-900 font-medium">iorlas-brainstorm</span> —
-          A decision coaching skill for Claude Code. Detects reasoning patterns and applies targeted techniques.
+
+        <div class="flex gap-4">
+          <div class="shrink-0 mt-1">
+            <div class="w-8 h-8 rounded-lg bg-coral/10 border border-coral/20 flex items-center justify-center">
+              <Icon name="award" size={16} class="text-coral" />
+            </div>
+          </div>
+          <div>
+            <p class="text-gray-900 font-medium">World's First Stripe Certified Solution Architect</p>
+            <p class="text-sm leading-relaxed mt-0.5">
+              Cert <a href="https://stripecertifications.credential.net/026ed691-e891-4a49-9d36-65bcfe44c31a" class="text-coral hover:text-coral-hover transition-colors" target="_blank" rel="noopener">#4 Implementation Architect</a>
+              and <a href="https://stripecertifications.credential.net/c91196ed-8924-446c-ac5a-4be0ac178922" class="text-coral hover:text-coral-hover transition-colors" target="_blank" rel="noopener">#5 Developer</a>
+              globally.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Published Work -->
-    <section class="mb-16 sm:mb-20">
-      <h2 class="text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-6">Published Work</h2>
-      <div class="space-y-4 text-base leading-relaxed">
-        <div>
-          <a href="https://dataart.team/articles/guide-to-agentic-ai-autonomous-systems" class="text-coral hover:text-coral-hover transition-colors" target="_blank" rel="noopener">AI Agents: Cutting Through the Noise</a>
-          <span class="text-gray-400"> — A practical guide to agentic AI and autonomous systems.</span>
+    <!-- What I Build -->
+    <section class="mb-20 sm:mb-24">
+      <h2 class="flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-8">
+        <Icon name="wrench" size={14} class="text-gray-300" />
+        What I Build
+      </h2>
+
+      <div class="space-y-6">
+        <div class="flex gap-4">
+          <div class="shrink-0 mt-1">
+            <div class="w-8 h-8 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center">
+              <Icon name="bot" size={16} class="text-gray-400" />
+            </div>
+          </div>
+          <div>
+            <p class="text-gray-900 font-medium">Agentic AI systems</p>
+            <p class="text-sm leading-relaxed mt-0.5">Multi-agent architectures, tool orchestration, MCP server patterns. The kind of systems where you need to think carefully about what the agents can and can't do.</p>
+          </div>
         </div>
-        <div>
-          <a href="https://dataart.com/company/newsroom/media/agentic-ai-how-modular-systems-are-shaping-the-future-of-intelligent-systems" class="text-coral hover:text-coral-hover transition-colors" target="_blank" rel="noopener">Agentic AI: How Modular Systems Are Shaping the Future</a>
-          <span class="text-gray-400"> — On composable AI architecture for intelligent systems.</span>
+
+        <div class="flex gap-4">
+          <div class="shrink-0 mt-1">
+            <div class="w-8 h-8 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center">
+              <Icon name="brain" size={16} class="text-gray-400" />
+            </div>
+          </div>
+          <div>
+            <p class="text-gray-900 font-medium">iorlas-kay</p>
+            <p class="text-sm leading-relaxed mt-0.5">My personal knowledge OS, built with Claude Code. Semantic search, entity resolution, structured capture — it's how I organize everything I know.</p>
+          </div>
         </div>
-        <div>
-          <a href="https://dataart.com/blog/agentic-ai-in-the-wild" class="text-coral hover:text-coral-hover transition-colors" target="_blank" rel="noopener">74% Faster Software Delivery: Agentic AI in the Wild</a>
-          <span class="text-gray-400"> — Real-world results from AI-augmented development teams.</span>
+
+        <div class="flex gap-4">
+          <div class="shrink-0 mt-1">
+            <div class="w-8 h-8 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center">
+              <Icon name="lightbulb" size={16} class="text-gray-400" />
+            </div>
+          </div>
+          <div>
+            <p class="text-gray-900 font-medium">iorlas-brainstorm</p>
+            <p class="text-sm leading-relaxed mt-0.5">A decision coaching skill for Claude Code. It detects your reasoning pattern — rationalizing, over-analyzing, genuinely torn — and applies the right technique.</p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section class="mb-20 sm:mb-24">
+      <h2 class="flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-8">
+        <Icon name="pen-line" size={14} class="text-gray-300" />
+        Writing
+      </h2>
+
+      <div class="space-y-5">
+        <a href="https://www.dataart.team/articles/guide-to-agentic-ai-autonomous-systems" class="group block" target="_blank" rel="noopener">
+          <p class="text-gray-900 font-medium group-hover:text-coral transition-colors">
+            AI Agents: Cutting Through the Noise
+            <Icon name="arrow-up-right" size={14} class="inline ml-1 text-gray-300 group-hover:text-coral transition-colors" />
+          </p>
+          <p class="text-sm text-gray-400 mt-0.5">A practical guide to what agentic AI actually is — and isn't.</p>
+        </a>
+
+        <a href="https://www.healthcarebusinesstoday.com/superbacteria-the-war-were-going-to-lose-without-ai-and-big-data/" class="group block" target="_blank" rel="noopener">
+          <p class="text-gray-900 font-medium group-hover:text-coral transition-colors">
+            Superbacteria: The War We're Going to Lose Without AI and Big Data
+            <Icon name="arrow-up-right" size={14} class="inline ml-1 text-gray-300 group-hover:text-coral transition-colors" />
+          </p>
+          <p class="text-sm text-gray-400 mt-0.5">On AI and big data in the fight against antimicrobial resistance.</p>
+        </a>
       </div>
     </section>
 
     <!-- Community -->
-    <section class="mb-16 sm:mb-20">
-      <h2 class="text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-6">Community</h2>
+    <section class="mb-20 sm:mb-24">
+      <h2 class="flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-8">
+        <Icon name="users" size={14} class="text-gray-300" />
+        Community
+      </h2>
       <p class="text-base leading-relaxed">
-        I lead the weekly Global Python Community Session at DataArt and help build the company's Python, JavaScript, and AI engineering communities.
-        Focused on making agentic AI patterns accessible to working engineers.
+        I run the weekly Global Python Community Session at DataArt and help build the Python, JavaScript, and AI engineering communities there.
+        Most of my energy goes into making agentic AI patterns practical — the kind of thing a working engineer can use on Monday morning.
       </p>
     </section>
 
+    <!-- Divider -->
+    <div class="border-t border-gray-100 mb-12"></div>
+
     <!-- Links -->
-    <footer>
-      <div class="flex gap-6 text-sm font-mono text-gray-400">
-        <a href="https://linkedin.com/in/denistomilin-28866686" class="hover:text-coral transition-colors" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/iorlas" class="hover:text-coral transition-colors" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://x.com/iorlasd" class="hover:text-coral transition-colors" target="_blank" rel="noopener">X</a>
-        <a href="mailto:dt0xff@gmail.com" class="hover:text-coral transition-colors">Email</a>
-      </div>
+    <footer class="flex flex-wrap gap-x-6 gap-y-3">
+      <a href="https://linkedin.com/in/denistomilin-28866686" class="group flex items-center gap-1.5 text-sm font-mono text-gray-400 hover:text-coral transition-colors" target="_blank" rel="noopener">
+        <Icon name="linkedin" size={15} class="text-gray-300 group-hover:text-coral transition-colors" />
+        LinkedIn
+      </a>
+      <a href="https://github.com/iorlas" class="group flex items-center gap-1.5 text-sm font-mono text-gray-400 hover:text-coral transition-colors" target="_blank" rel="noopener">
+        <Icon name="github" size={15} class="text-gray-300 group-hover:text-coral transition-colors" />
+        GitHub
+      </a>
+      <a href="https://x.com/iorlasd" class="group flex items-center gap-1.5 text-sm font-mono text-gray-400 hover:text-coral transition-colors" target="_blank" rel="noopener">
+        <Icon name="twitter" size={15} class="text-gray-300 group-hover:text-coral transition-colors" />
+        X
+      </a>
+      <a href="mailto:dt0xff@gmail.com" class="group flex items-center gap-1.5 text-sm font-mono text-gray-400 hover:text-coral transition-colors">
+        <Icon name="mail" size={15} class="text-gray-300 group-hover:text-coral transition-colors" />
+        Email
+      </a>
     </footer>
 
   </main>
