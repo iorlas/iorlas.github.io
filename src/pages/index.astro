@@ -4,196 +4,266 @@ import Icon from '../components/Icon.astro';
 ---
 
 <Layout title="Denis Tomilin — AI Architect">
-  <main class="mx-auto max-w-2xl px-6 pt-16 pb-24 sm:pt-28 sm:pb-32">
 
-    <!-- Hero -->
-    <section class="mb-20 sm:mb-24">
-      <div class="flex items-start gap-6 mb-8">
-        <!-- Photo placeholder -->
+  <!-- ═══ HERO ═══ -->
+  <section class="relative overflow-hidden">
+    <!-- Warm gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-surface-warm via-white to-coral-light/30"></div>
+    <!-- Subtle dot pattern -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #E8585E 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+    <div class="relative mx-auto max-w-3xl px-6 pt-20 pb-16 sm:pt-28 sm:pb-24">
+      <div class="flex flex-col items-center text-center">
         <img
           src="/photo.jpg"
           alt="Denis Tomilin"
-          width="96"
-          height="96"
-          class="shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border border-gray-200"
+          width="144"
+          height="144"
+          class="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover ring-4 ring-white shadow-lg mb-8"
         />
-        <div>
-          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 mb-1">
-            Denis Tomilin
-          </h1>
-          <p class="text-base sm:text-lg text-gray-400 flex items-center gap-1.5">
-            <Icon name="map-pin" size={14} class="inline text-gray-300" />
-            Istanbul, Turkiye
-          </p>
-        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-3">
+          Denis Tomilin
+        </h1>
+
+        <p class="text-lg sm:text-xl text-gray-500 mb-6 flex items-center gap-2">
+          <Icon name="map-pin" size={16} class="text-coral" />
+          Istanbul, Turkiye
+        </p>
+
+        <p class="text-xl sm:text-2xl leading-relaxed text-gray-700 max-w-xl font-medium">
+          I architect agentic AI systems and help enterprises
+          <span class="text-coral">actually ship them</span>.
+        </p>
+
+        <p class="text-base sm:text-lg leading-relaxed text-gray-500 mt-4 max-w-lg">
+          Solutions Architect at <a href="https://dataart.com" class="text-coral hover:text-coral-hover transition-colors font-medium" target="_blank" rel="noopener">DataArt</a>,
+          building the AI Lab — multi-agent systems, MCP patterns, and Claude Code tooling from prototype to production.
+        </p>
       </div>
 
-      <p class="text-lg sm:text-xl leading-relaxed text-gray-900">
-        I design agentic AI systems and help companies actually ship them.
-      </p>
-      <p class="text-base sm:text-lg leading-relaxed mt-3">
-        Solutions Architect at <a href="https://dataart.com" class="text-coral hover:text-coral-hover transition-colors" target="_blank" rel="noopener">DataArt</a>,
-        where I build the AI Lab practice — multi-agent architectures, MCP patterns, and Claude Code tooling
-        that makes it from prototype to production.
-      </p>
-    </section>
+      <!-- Signal bar -->
+      <div class="flex flex-wrap justify-center gap-6 sm:gap-10 mt-12 pt-8 border-t border-coral/10">
+        <div class="text-center">
+          <p class="text-2xl sm:text-3xl font-bold text-gray-900">8+</p>
+          <p class="text-xs font-mono uppercase tracking-wider text-gray-400 mt-1">Years at DataArt</p>
+        </div>
+        <div class="text-center">
+          <p class="text-2xl sm:text-3xl font-bold text-gray-900">2+</p>
+          <p class="text-xs font-mono uppercase tracking-wider text-gray-400 mt-1">Years building with AI daily</p>
+        </div>
+        <div class="text-center">
+          <p class="text-2xl sm:text-3xl font-bold text-coral">Weekly</p>
+          <p class="text-xs font-mono uppercase tracking-wider text-gray-400 mt-1">Community sessions</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Credentials -->
-    <section class="mb-20 sm:mb-24">
-      <h2 class="flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-8">
-        <Icon name="briefcase" size={14} class="text-gray-300" />
+  <!-- ═══ CREDENTIALS ═══ -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-3xl px-6 py-20 sm:py-28">
+      <h2 class="flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-10">
+        <Icon name="briefcase" size={14} class="text-coral" />
         Background
       </h2>
 
-      <div class="space-y-6">
-        <div class="flex gap-4">
-          <div class="shrink-0 mt-1">
-            <div class="w-8 h-8 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center">
-              <Icon name="building" size={16} class="text-gray-400" />
-            </div>
+      <!-- Stripe badge — standalone, prominent -->
+      <div class="rounded-xl border border-coral-border bg-gradient-to-r from-coral-light to-white p-6 sm:p-8 mb-8">
+        <div class="flex items-start gap-4">
+          <div class="shrink-0 w-12 h-12 rounded-xl bg-coral flex items-center justify-center shadow-sm">
+            <Icon name="award" size={24} class="text-white" />
           </div>
           <div>
-            <p class="text-gray-900 font-medium">DataArt</p>
-            <p class="text-sm leading-relaxed mt-0.5">8+ years at a US-headquartered technology consultancy. Currently building the AI Lab — the practice that helps enterprise clients go from "we should use AI" to working systems.</p>
+            <p class="text-lg sm:text-xl font-bold text-gray-900">World's First Stripe Certified Solution Architect</p>
+            <p class="text-sm text-gray-500 leading-relaxed mt-1">
+              Among the earliest globally. Two certifications that didn't exist before.
+            </p>
+            <div class="flex flex-wrap gap-3 mt-4">
+              <a href="https://stripecertifications.credential.net/026ed691-e891-4a49-9d36-65bcfe44c31a" class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-coral hover:text-coral-hover transition-colors bg-white border border-coral-border rounded-full px-3 py-1.5 hover:shadow-sm" target="_blank" rel="noopener">
+                <Icon name="shield-check" size={12} class="text-coral" />
+                Cert #4 — Implementation Architect
+              </a>
+              <a href="https://stripecertifications.credential.net/c91196ed-8924-446c-ac5a-4be0ac178922" class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-coral hover:text-coral-hover transition-colors bg-white border border-coral-border rounded-full px-3 py-1.5 hover:shadow-sm" target="_blank" rel="noopener">
+                <Icon name="shield-check" size={12} class="text-coral" />
+                Cert #5 — Developer
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other credentials -->
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-xl border border-gray-100 bg-surface p-5 hover:border-gray-200 hover:shadow-sm transition-all">
+          <div class="flex items-start gap-3">
+            <div class="shrink-0 w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center">
+              <Icon name="building" size={18} class="text-gray-500" />
+            </div>
+            <div>
+              <p class="text-gray-900 font-semibold">DataArt</p>
+              <p class="text-sm text-gray-500 mt-0.5">US-headquartered technology consultancy. Building the AI Lab practice — from "we should use AI" to working systems.</p>
+            </div>
           </div>
         </div>
 
-        <div class="flex gap-4">
-          <div class="shrink-0 mt-1">
-            <div class="w-8 h-8 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center">
-              <Icon name="zap" size={16} class="text-gray-400" />
+        <div class="rounded-xl border border-gray-100 bg-surface p-5 hover:border-gray-200 hover:shadow-sm transition-all">
+          <div class="flex items-start gap-3">
+            <div class="shrink-0 w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center">
+              <Icon name="zap" size={18} class="text-gray-500" />
             </div>
-          </div>
-          <div>
-            <p class="text-gray-900 font-medium">Ex-CTO, Grand Capital</p>
-            <p class="text-sm leading-relaxed mt-0.5">Led engineering and product for a financial services company. Full stack from infrastructure to product decisions.</p>
+            <div>
+              <p class="text-gray-900 font-semibold">Ex-CTO, Grand Capital</p>
+              <p class="text-sm text-gray-500 mt-0.5">Led engineering and product for a financial services company. Full stack from infra to product.</p>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="flex gap-4">
-          <div class="shrink-0 mt-1">
-            <div class="w-8 h-8 rounded-lg bg-coral/10 border border-coral/20 flex items-center justify-center">
-              <Icon name="award" size={16} class="text-coral" />
+  <!-- ═══ WHAT I BUILD ═══ -->
+  <section class="bg-surface">
+    <div class="mx-auto max-w-3xl px-6 py-20 sm:py-28">
+      <h2 class="flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-10">
+        <Icon name="wrench" size={14} class="text-coral" />
+        What I Build
+      </h2>
+
+      <div class="grid gap-4 sm:grid-cols-3">
+        <!-- Agentic AI -->
+        <div class="rounded-xl border border-gray-100 bg-white p-5 hover:border-coral/30 hover:shadow-sm transition-all group">
+          <div class="w-10 h-10 rounded-xl bg-coral/10 flex items-center justify-center mb-4 group-hover:bg-coral/15 transition-colors">
+            <Icon name="bot" size={20} class="text-coral" />
+          </div>
+          <p class="text-gray-900 font-semibold mb-1.5">Agentic AI Systems</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Multi-agent architectures, tool orchestration, and MCP server patterns for enterprise clients.</p>
+        </div>
+
+        <!-- iorlas-kay -->
+        <a href="https://github.com/iorlas" class="rounded-xl border border-gray-100 bg-white p-5 hover:border-coral/30 hover:shadow-sm transition-all group block" target="_blank" rel="noopener">
+          <div class="w-10 h-10 rounded-xl bg-coral/10 flex items-center justify-center mb-4 group-hover:bg-coral/15 transition-colors">
+            <Icon name="brain" size={20} class="text-coral" />
+          </div>
+          <p class="text-gray-900 font-semibold mb-1.5 flex items-center gap-1.5">
+            iorlas-kay
+            <Icon name="arrow-up-right" size={12} class="text-gray-300 group-hover:text-coral transition-colors" />
+          </p>
+          <p class="text-sm text-gray-500 leading-relaxed">Personal knowledge OS. Semantic search, entity resolution, structured capture — how I organize everything I know.</p>
+        </a>
+
+        <!-- iorlas-brainstorm -->
+        <a href="https://github.com/iorlas" class="rounded-xl border border-gray-100 bg-white p-5 hover:border-coral/30 hover:shadow-sm transition-all group block" target="_blank" rel="noopener">
+          <div class="w-10 h-10 rounded-xl bg-coral/10 flex items-center justify-center mb-4 group-hover:bg-coral/15 transition-colors">
+            <Icon name="lightbulb" size={20} class="text-coral" />
+          </div>
+          <p class="text-gray-900 font-semibold mb-1.5 flex items-center gap-1.5">
+            iorlas-brainstorm
+            <Icon name="arrow-up-right" size={12} class="text-gray-300 group-hover:text-coral transition-colors" />
+          </p>
+          <p class="text-sm text-gray-500 leading-relaxed">Decision coaching skill for Claude Code. Detects your reasoning pattern and applies the right technique.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WRITING ═══ -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-3xl px-6 py-20 sm:py-28">
+      <h2 class="flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-10">
+        <Icon name="pen-line" size={14} class="text-coral" />
+        Writing
+      </h2>
+
+      <div class="space-y-4">
+        <a href="https://www.dataart.team/articles/guide-to-agentic-ai-autonomous-systems" class="group block rounded-xl border border-gray-100 p-5 hover:border-coral/30 hover:shadow-sm transition-all" target="_blank" rel="noopener">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="text-gray-900 font-semibold group-hover:text-coral transition-colors">
+                AI Agents: Cutting Through the Noise
+              </p>
+              <p class="text-sm text-gray-400 mt-1">A practical guide to what agentic AI actually is — and isn't.</p>
             </div>
+            <Icon name="arrow-up-right" size={16} class="shrink-0 mt-1 text-gray-300 group-hover:text-coral transition-colors" />
+          </div>
+        </a>
+
+        <a href="https://www.healthcarebusinesstoday.com/superbacteria-the-war-were-going-to-lose-without-ai-and-big-data/" class="group block rounded-xl border border-gray-100 p-5 hover:border-coral/30 hover:shadow-sm transition-all" target="_blank" rel="noopener">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="text-gray-900 font-semibold group-hover:text-coral transition-colors">
+                Superbacteria: The War We're Going to Lose Without AI and Big Data
+              </p>
+              <p class="text-sm text-gray-400 mt-1">On AI and big data in the fight against antimicrobial resistance.</p>
+            </div>
+            <Icon name="arrow-up-right" size={16} class="shrink-0 mt-1 text-gray-300 group-hover:text-coral transition-colors" />
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COMMUNITY ═══ -->
+  <section class="bg-surface">
+    <div class="mx-auto max-w-3xl px-6 py-20 sm:py-28">
+      <h2 class="flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-10">
+        <Icon name="users" size={14} class="text-coral" />
+        Community
+      </h2>
+
+      <div class="rounded-xl border border-gray-100 bg-white p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="shrink-0 w-10 h-10 rounded-xl bg-coral/10 flex items-center justify-center">
+            <Icon name="globe" size={20} class="text-coral" />
           </div>
           <div>
-            <p class="text-gray-900 font-medium">World's First Stripe Certified Solution Architect</p>
-            <p class="text-sm leading-relaxed mt-0.5">
-              Cert <a href="https://stripecertifications.credential.net/026ed691-e891-4a49-9d36-65bcfe44c31a" class="text-coral hover:text-coral-hover transition-colors" target="_blank" rel="noopener">#4 Implementation Architect</a>
-              and <a href="https://stripecertifications.credential.net/c91196ed-8924-446c-ac5a-4be0ac178922" class="text-coral hover:text-coral-hover transition-colors" target="_blank" rel="noopener">#5 Developer</a>
-              globally.
+            <p class="text-gray-900 font-semibold text-lg">Global Python Community Session</p>
+            <p class="text-sm text-gray-500 leading-relaxed mt-1.5">
+              I run this weekly at DataArt — engineers from across the company show up to talk Python, AI patterns, and how to use these tools on real projects.
+              I also help build the broader Python, JavaScript, and AI engineering communities there.
+            </p>
+            <p class="text-sm text-gray-500 leading-relaxed mt-3">
+              Most of my energy goes into making agentic AI practical — the kind of thing a working engineer can use Monday morning, not just conference-talk material.
             </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- What I Build -->
-    <section class="mb-20 sm:mb-24">
-      <h2 class="flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-8">
-        <Icon name="wrench" size={14} class="text-gray-300" />
-        What I Build
-      </h2>
-
-      <div class="space-y-6">
-        <div class="flex gap-4">
-          <div class="shrink-0 mt-1">
-            <div class="w-8 h-8 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center">
-              <Icon name="bot" size={16} class="text-gray-400" />
-            </div>
-          </div>
-          <div>
-            <p class="text-gray-900 font-medium">Agentic AI systems</p>
-            <p class="text-sm leading-relaxed mt-0.5">Multi-agent architectures, tool orchestration, MCP server patterns. The kind of systems where you need to think carefully about what the agents can and can't do.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4">
-          <div class="shrink-0 mt-1">
-            <div class="w-8 h-8 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center">
-              <Icon name="brain" size={16} class="text-gray-400" />
-            </div>
-          </div>
-          <div>
-            <p class="text-gray-900 font-medium">iorlas-kay</p>
-            <p class="text-sm leading-relaxed mt-0.5">My personal knowledge OS, built with Claude Code. Semantic search, entity resolution, structured capture — it's how I organize everything I know.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4">
-          <div class="shrink-0 mt-1">
-            <div class="w-8 h-8 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center">
-              <Icon name="lightbulb" size={16} class="text-gray-400" />
-            </div>
-          </div>
-          <div>
-            <p class="text-gray-900 font-medium">iorlas-brainstorm</p>
-            <p class="text-sm leading-relaxed mt-0.5">A decision coaching skill for Claude Code. It detects your reasoning pattern — rationalizing, over-analyzing, genuinely torn — and applies the right technique.</p>
-          </div>
-        </div>
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="bg-white border-t border-gray-100">
+    <div class="mx-auto max-w-3xl px-6 py-16 sm:py-20">
+      <div class="text-center mb-10">
+        <p class="text-lg font-medium text-gray-900 mb-2">Let's talk</p>
+        <p class="text-sm text-gray-400">
+          Open to conversations about agentic AI, architecture, and interesting problems.
+        </p>
       </div>
-    </section>
 
-    <!-- Writing -->
-    <section class="mb-20 sm:mb-24">
-      <h2 class="flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-8">
-        <Icon name="pen-line" size={14} class="text-gray-300" />
-        Writing
-      </h2>
-
-      <div class="space-y-5">
-        <a href="https://www.dataart.team/articles/guide-to-agentic-ai-autonomous-systems" class="group block" target="_blank" rel="noopener">
-          <p class="text-gray-900 font-medium group-hover:text-coral transition-colors">
-            AI Agents: Cutting Through the Noise
-            <Icon name="arrow-up-right" size={14} class="inline ml-1 text-gray-300 group-hover:text-coral transition-colors" />
-          </p>
-          <p class="text-sm text-gray-400 mt-0.5">A practical guide to what agentic AI actually is — and isn't.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://linkedin.com/in/denistomilin-28866686" class="group inline-flex items-center gap-2 text-sm font-mono text-gray-500 bg-surface border border-gray-100 rounded-full px-4 py-2 hover:border-coral/30 hover:text-coral hover:bg-coral-light transition-all" target="_blank" rel="noopener">
+          <Icon name="linkedin" size={15} class="text-gray-400 group-hover:text-coral transition-colors" />
+          LinkedIn
         </a>
-
-        <a href="https://www.healthcarebusinesstoday.com/superbacteria-the-war-were-going-to-lose-without-ai-and-big-data/" class="group block" target="_blank" rel="noopener">
-          <p class="text-gray-900 font-medium group-hover:text-coral transition-colors">
-            Superbacteria: The War We're Going to Lose Without AI and Big Data
-            <Icon name="arrow-up-right" size={14} class="inline ml-1 text-gray-300 group-hover:text-coral transition-colors" />
-          </p>
-          <p class="text-sm text-gray-400 mt-0.5">On AI and big data in the fight against antimicrobial resistance.</p>
+        <a href="https://github.com/iorlas" class="group inline-flex items-center gap-2 text-sm font-mono text-gray-500 bg-surface border border-gray-100 rounded-full px-4 py-2 hover:border-coral/30 hover:text-coral hover:bg-coral-light transition-all" target="_blank" rel="noopener">
+          <Icon name="github" size={15} class="text-gray-400 group-hover:text-coral transition-colors" />
+          GitHub
+        </a>
+        <a href="https://x.com/iorlasd" class="group inline-flex items-center gap-2 text-sm font-mono text-gray-500 bg-surface border border-gray-100 rounded-full px-4 py-2 hover:border-coral/30 hover:text-coral hover:bg-coral-light transition-all" target="_blank" rel="noopener">
+          <Icon name="twitter" size={15} class="text-gray-400 group-hover:text-coral transition-colors" />
+          X
+        </a>
+        <a href="mailto:dt0xff@gmail.com" class="group inline-flex items-center gap-2 text-sm font-mono text-gray-500 bg-surface border border-gray-100 rounded-full px-4 py-2 hover:border-coral/30 hover:text-coral hover:bg-coral-light transition-all">
+          <Icon name="mail" size={15} class="text-gray-400 group-hover:text-coral transition-colors" />
+          Email
         </a>
       </div>
-    </section>
 
-    <!-- Community -->
-    <section class="mb-20 sm:mb-24">
-      <h2 class="flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest text-gray-400 mb-8">
-        <Icon name="users" size={14} class="text-gray-300" />
-        Community
-      </h2>
-      <p class="text-base leading-relaxed">
-        I run the weekly Global Python Community Session at DataArt and help build the Python, JavaScript, and AI engineering communities there.
-        Most of my energy goes into making agentic AI patterns practical — the kind of thing a working engineer can use on Monday morning.
+      <p class="text-center text-xs text-gray-300 font-mono mt-12">
+        &copy; 2026 Denis Tomilin
       </p>
-    </section>
+    </div>
+  </footer>
 
-    <!-- Divider -->
-    <div class="border-t border-gray-100 mb-12"></div>
-
-    <!-- Links -->
-    <footer class="flex flex-wrap gap-x-6 gap-y-3">
-      <a href="https://linkedin.com/in/denistomilin-28866686" class="group flex items-center gap-1.5 text-sm font-mono text-gray-400 hover:text-coral transition-colors" target="_blank" rel="noopener">
-        <Icon name="linkedin" size={15} class="text-gray-300 group-hover:text-coral transition-colors" />
-        LinkedIn
-      </a>
-      <a href="https://github.com/iorlas" class="group flex items-center gap-1.5 text-sm font-mono text-gray-400 hover:text-coral transition-colors" target="_blank" rel="noopener">
-        <Icon name="github" size={15} class="text-gray-300 group-hover:text-coral transition-colors" />
-        GitHub
-      </a>
-      <a href="https://x.com/iorlasd" class="group flex items-center gap-1.5 text-sm font-mono text-gray-400 hover:text-coral transition-colors" target="_blank" rel="noopener">
-        <Icon name="twitter" size={15} class="text-gray-300 group-hover:text-coral transition-colors" />
-        X
-      </a>
-      <a href="mailto:dt0xff@gmail.com" class="group flex items-center gap-1.5 text-sm font-mono text-gray-400 hover:text-coral transition-colors">
-        <Icon name="mail" size={15} class="text-gray-300 group-hover:text-coral transition-colors" />
-        Email
-      </a>
-    </footer>
-
-  </main>
 </Layout>
