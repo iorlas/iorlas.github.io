@@ -1,0 +1,97 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('travel', ({ data }) => !data.draft);
+  return guides.map((guide) => ({
+    params: { countrySlug: guide.data.countrySlug, citySlug: guide.data.citySlug },
+    props: { guide },
+  }));
+}
+
+const { guide } = Astro.props;
+const { Content, headings } = await render(guide);
+const tocHeadings = headings.filter((h) => h.depth === 2);
+---
+
+<Layout title={`${guide.data.title}, ${guide.data.country} — Travel Guide`} description={`Practical travel cheatsheet for ${guide.data.title}, ${guide.data.country}`}>
+  <div class="min-h-screen bg-[#faf9f7]">
+    <div class="max-w-[1100px] mx-auto px-6 pt-14 sm:pt-20 pb-16">
+
+      <!-- Back link -->
+      <a href="/travel" class="text-sm font-mono text-gray-400 hover:text-coral transition-colors mb-8 inline-block">&larr; All guides</a>
+
+      <!-- Header -->
+      <h1 class="text-3xl font-bold text-gray-900 mb-1">{guide.data.title}</h1>
+      <p class="text-sm text-gray-400 font-mono mb-10">
+        {guide.data.country} &middot; Updated {guide.data.lastUpdated.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+      </p>
+
+      <div class="flex gap-12">
+
+        <!-- Sidebar TOC (desktop) -->
+        {tocHeadings.length > 0 && (
+          <nav class="hidden lg:block w-48 shrink-0">
+            <div class="sticky top-20">
+              <p class="text-[10px] font-mono uppercase tracking-widest text-gray-500 mb-3">On this page</p>
+              <ul class="space-y-1.5 border-l border-gray-200">
+                {tocHeadings.map((h) => (
+                  <li>
+                    <a
+                      href={`#${h.slug}`}
+                      class="block pl-3 text-[13px] text-gray-400 hover:text-coral hover:border-l-coral border-l-2 border-transparent -ml-[1px] transition-colors leading-snug py-0.5"
+                    >
+                      {h.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </nav>
+        )}
+
+        <!-- Main content -->
+        <main class="min-w-0 max-w-[720px]">
+
+          <!-- Mobile TOC -->
+          {tocHeadings.length > 0 && (
+            <nav class="lg:hidden mb-10 pb-6 border-b border-gray-200/50">
+              <p class="text-[10px] font-mono uppercase tracking-widest text-gray-500 mb-3">On this page</p>
+              <div class="flex flex-wrap gap-x-4 gap-y-1">
+                {tocHeadings.map((h) => (
+                  <a
+                    href={`#${h.slug}`}
+                    class="text-[13px] text-gray-400 hover:text-coral transition-colors"
+                  >
+                    {h.text}
+                  </a>
+                ))}
+              </div>
+            </nav>
+          )}
+
+          <!-- Content -->
+          <article class="prose prose-gray max-w-none
+            prose-headings:font-bold prose-headings:text-gray-900
+            prose-h2:text-xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:pt-6 prose-h2:border-t prose-h2:border-gray-200/50
+            prose-h3:text-base prose-h3:mt-6 prose-h3:mb-3
+            prose-p:text-[15px] prose-p:leading-relaxed prose-p:text-gray-600
+            prose-li:text-[15px] prose-li:text-gray-600
+            prose-a:text-coral prose-a:no-underline hover:prose-a:underline
+            prose-strong:text-gray-800
+            prose-blockquote:border-l-coral/40 prose-blockquote:bg-coral-light/30 prose-blockquote:rounded-r-lg prose-blockquote:py-3 prose-blockquote:px-4 prose-blockquote:not-italic
+          ">
+            <Content />
+          </article>
+
+          <!-- Footer -->
+          <div class="mt-16 pt-8 border-t border-gray-200/50 text-center">
+            <a href="/travel" class="text-sm font-mono text-gray-400 hover:text-coral transition-colors">&larr; All guides</a>
+          </div>
+        </main>
+
+      </div>
+    </div>
+  </div>
+</Layout>
