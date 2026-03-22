@@ -9,6 +9,7 @@
   --color-surface-warm: #fdf8f7;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --spacing-col-gap: 20px;
 }
 
 html {
