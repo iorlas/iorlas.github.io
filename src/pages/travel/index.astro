@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const guides = await getCollection('travel', ({ data }) => !data.draft);
+
+// Group by country
+const byCountry = new Map<string, typeof guides>();
+for (const guide of guides) {
+  const group = byCountry.get(guide.data.country) || [];
+  group.push(guide);
+  byCountry.set(guide.data.country, group);
+}
+
+// Sort countries, then cities within each
+const countries = [...byCountry.entries()]
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([country, cities]) => ({
+    country,
+    cities: cities.sort((a, b) => a.data.title.localeCompare(b.data.title)),
+  }));
+---
+
+<Layout title="Travel Guides — Denis Tomilin" description="Practical city travel cheatsheets — food, transport, scams, what to visit">
+  <div class="min-h-screen bg-[#faf9f7]">
+    <main class="max-w-[720px] mx-auto px-6 pt-14 sm:pt-20 pb-16">
+
+      <!-- Back link -->
+      <a href="/" class="text-sm font-mono text-gray-400 hover:text-coral transition-colors mb-8 inline-block">&larr; Home</a>
+
+      <h1 class="text-3xl font-bold text-gray-900 mb-3">Travel Guides</h1>
+      <p class="text-[15px] text-gray-500 leading-relaxed mb-12">
+        Practical cheatsheets from cities I've visited. Language, money, food, transport, scams — everything you need to know before you go.
+      </p>
+
+      {countries.map(({ country, cities }) => (
+        <section class="mb-10">
+          <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">{country}</h2>
+          <div class="space-y-3">
+            {cities.map((guide) => (
+              <a
+                href={`/travel/${guide.data.countrySlug}/${guide.data.citySlug}`}
+                class="flex items-center justify-between bg-white border border-gray-200 rounded-lg px-5 py-4 hover:border-coral/30 transition-colors group"
+              >
+                <span class="text-[15px] font-semibold text-gray-800 group-hover:text-coral transition-colors">
+                  {guide.data.title}
+                </span>
+                <span class="text-xs font-mono text-gray-400">
+                  {guide.data.lastUpdated.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <!-- Footer -->
+      <div class="mt-8 pt-8 border-t border-gray-200/50 text-center">
+        <a href="/" class="text-sm font-mono text-gray-400 hover:text-coral transition-colors">&larr; Home</a>
+      </div>
+    </main>
+  </div>
+</Layout>
