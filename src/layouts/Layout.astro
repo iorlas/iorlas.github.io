@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Nav from '../components/Nav.astro';
 
 interface Props {
   title: string;
@@ -37,7 +38,7 @@ const { title, description = 'Denis Tomilin — AI Architect, Enterprise Consult
       })(window,document,'script','dataLayer','GTM-MKL37N3C');
     </script>
   </head>
-  <body class="bg-white text-gray-600 font-sans antialiased">
+  <body class="bg-stone-50 text-stone-600 font-sans antialiased">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe
@@ -48,6 +49,7 @@ const { title, description = 'Denis Tomilin — AI Architect, Enterprise Consult
       ></iframe>
     </noscript>
 
+    <Nav />
     <slot />
   </body>
 </html>
