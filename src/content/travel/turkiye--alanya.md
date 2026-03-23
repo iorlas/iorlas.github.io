@@ -3,7 +3,7 @@ title: Alanya / Mahmutlar
 country: Turkiye
 countrySlug: turkiye
 citySlug: alanya
-lastUpdated: 2026-03-22
+lastUpdated: 2025-04-25
 ---
 
 Antalya, Alanya — typical destinations for many europeans during summer time. Prior to 2023 there were a lot of people from Russia and Ukraine. Many Turks speak russian, english, turkish. Since 2023 — things have changed drastically. Now there are a lot of europeans from richer countries — a lot of people from Germany, some people from UK, Spain, Italy.

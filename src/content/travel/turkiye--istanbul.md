@@ -3,7 +3,7 @@ title: Istanbul
 country: Turkiye
 countrySlug: turkiye
 citySlug: istanbul
-lastUpdated: 2026-03-22
+lastUpdated: 2025-05-28
 ---
 
 Istanbul — ex-Constantinople. A rich city with a rich history. It is a common transit zone for many EU/Asia trips, but also a nice stay for a quick and cheap shopping time (mostly wear, tech is still expensive there, but some prices might surprise). You will see a lot of different cultures there, but mostly muslim, european, a bit of asian.
