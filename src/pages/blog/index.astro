@@ -2,8 +2,9 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
+const now = new Date();
 const posts = (await getCollection('blog'))
-  .filter((post) => !post.data.draft)
+  .filter((post) => !post.data.draft && post.data.date <= now)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 ---
