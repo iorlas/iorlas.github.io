@@ -2,7 +2,7 @@
 title: "The Open Memory Problem: Why AI Agents Still Can't Remember Properly"
 date: 2026-03-24
 description: "Eight agent memory systems compared. Everyone solves storage. Nobody solves intelligence."
-draft: true
+draft: false
 tags:
   - iorlas_research
   - iorlas_agents
