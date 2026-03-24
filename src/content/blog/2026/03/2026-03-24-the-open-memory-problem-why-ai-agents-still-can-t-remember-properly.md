@@ -14,7 +14,7 @@ Here's what the landscape looks like in March 2026, and why I think everyone is 
 
 ## The Big Three
 
-### mem0 (48K GitHub stars)
+### [mem0](https://github.com/mem0ai/mem0) (48K GitHub stars)
 
 The most widely adopted memory layer. Hybrid architecture: vector store + optional knowledge graph. Automatic fact extraction from conversations. 26% better accuracy than OpenAI's built-in memory, 91% lower latency, 90%+ token savings.
 
@@ -22,13 +22,13 @@ Their OpenMemory MCP server adds a local-first, privacy-preserving variant — y
 
 **The catch:** No per-memory quality signals. You can't tell if a specific memory is helping or hurting. And the extraction pipeline has a fundamental architectural issue I'll get to below.
 
-### Zep / Graphiti (23K stars)
+### [Zep / Graphiti](https://github.com/getzep/graphiti) (23K stars)
 
 Best temporal handling in the space. Built on a bi-temporal knowledge graph — it tracks both *when something happened* and *when the system learned about it*. Three subgraphs: episodic (raw events), semantic (entities and relations), and community (domain summaries).
 
 94.8% on the DMR benchmark. If your agent needs to reason about time — "what did the user prefer last month vs now?" — this is the right pick.
 
-### Letta, formerly MemGPT
+### [Letta](https://github.com/letta-ai/letta), formerly MemGPT
 
 The most elegant design metaphor. The agent IS its own memory manager, using an OS-inspired hierarchy: core memory (RAM — always in context), archival memory (disk — retrieved on demand), and recall memory (searchable conversation history).
 
@@ -36,7 +36,7 @@ The agent reads and writes its own memory via function calls. Beautiful concept,
 
 ## The Challengers
 
-### OpenViking (ByteDance, 15K stars)
+### [OpenViking](https://github.com/volcengine/OpenViking) (ByteDance, 15K stars)
 
 I'm currently evaluating this one. The interesting idea: a filesystem paradigm for context. Everything — memories, resources, skills — gets mapped to virtual directories under the `viking://` protocol, each with a unique URI.
 
@@ -44,19 +44,19 @@ The killer feature is tiered loading: L0 (50 tokens, abstract summary, <100ms), 
 
 Self-evolving: at session end, the system asynchronously analyzes results and updates memory. Built to work with OpenClaw-style agents.
 
-### A-MEM (Zettelkasten-inspired)
+### [A-MEM](https://github.com/agiresearch/A-mem) (Zettelkasten-inspired)
 
 Seven-field note structure with ripple updates — change one memory, connected ones cascade automatically. The most academically elegant design. Inspired by Luhmann's Zettelkasten method. Fewer stars (876), less battle-tested, but the ripple update mechanism is genuinely novel.
 
-### Cognee (13K stars, Apache-2.0)
+### [Cognee](https://github.com/topoteretes/cognee) (13K stars, Apache-2.0)
 
 Best pipeline architecture. Extract-Cognify-Load with a self-improving "memify" step. 14 retrieval modes, Neo4j graph backend, ontology resolver. 70+ companies running it in production. The most enterprise-ready option after mem0.
 
-### Honcho (Plastic Labs)
+### [Honcho](https://github.com/plastic-labs/honcho) (Plastic Labs)
 
 Entity-centric approach. Models users, agents, NPCs, and groups as "peers" that the system continuously learns about. SOTA on LongMem, LoCoMo, and BEAM benchmarks — the last one handles 10M+ token conversations. $5.4M raised. Interesting if your use case is modeling relationships between entities, not just storing facts.
 
-### LangMem (LangChain)
+### [LangMem](https://github.com/langchain-ai/langmem) (LangChain)
 
 LangChain's answer to agent memory. Flat key-value + vector search. Two modes: "hot path" (agent decides what to store in real-time) and background processing (automatic async extraction). Includes prompt refinement — procedural memory through updated instructions. The downside: LangGraph lock-in for the full feature set.
 
@@ -66,7 +66,7 @@ After evaluating all eight, the gaps are consistent:
 
 **Governance.** Who controls what the agent remembers? What if it "learns" something wrong and reinforces it? No system has access control, review processes, or amendment procedures for memories. You either trust the agent completely or don't use memory at all.
 
-**Quality decay.** How do you retire stale knowledge? Only CortexGraph (29 stars, proof-of-concept) even attempts Ebbinghaus forgetting curves. Everything else accumulates memories forever. In six months of active use, your memory store is mostly noise.
+**Quality decay.** How do you retire stale knowledge? Only [CortexGraph](https://github.com/prefrontal-systems/cortexgraph) (29 stars, proof-of-concept) even attempts Ebbinghaus forgetting curves. Everything else accumulates memories forever. In six months of active use, your memory store is mostly noise.
 
 **Cross-agent trust.** How do you transfer knowledge between agents without shipping garbage along with it? Mem0 shares by user_id. Letta shares memory blocks. But neither has quality signals — you're sharing raw memories with no fitness score, no provenance, no way to know if they're helpful.
 
