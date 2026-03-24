@@ -3,6 +3,7 @@ title: "How AI Agents Actually Remember Things"
 date: 2026-03-24
 description: "A look at persistent memory architectures for AI agents — what works, what doesn't, and why most approaches fail in production."
 tags: [ai, agents, architecture]
+image: https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop
 draft: false
 ---
 

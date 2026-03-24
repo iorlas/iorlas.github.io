@@ -13,10 +13,15 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
 const tocHeadings = headings.filter((h) => h.depth === 2);
+
+const allPosts = (await getCollection('blog'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 8);
 ---
 
-<Layout title={`${post.data.title} — Denis Tomilin`} description={post.data.description}>
-    <main class="max-w-[720px] mx-auto px-6 pt-14 sm:pt-20 pb-16">
+<Layout title={`${post.data.title} — Denis Tomilin`} description={post.data.description} image={post.data.image}>
+    <div class="max-w-[1100px] mx-auto px-6 pt-6 sm:pt-10 pb-16">
 
       <!-- Back link -->
       <a href="/blog" class="text-sm font-mono text-stone-500 hover:text-iris transition-colors mb-8 inline-block">&larr; All posts</a>
@@ -38,19 +43,104 @@ const tocHeadings = headings.filter((h) => h.depth === 2);
         </div>
       </header>
 
-      <!-- Content -->
-      <article class="prose prose-stone max-w-none
-        prose-headings:font-bold prose-headings:text-stone-900
-        prose-h2:text-xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:pt-6 prose-h2:border-t prose-h2:border-stone-200/50
-        prose-h3:text-base prose-h3:mt-6 prose-h3:mb-3
-        prose-p:text-[15px] prose-p:leading-relaxed prose-p:text-stone-600
-        prose-li:text-[15px] prose-li:text-stone-600
-        prose-a:text-iris prose-a:no-underline hover:prose-a:underline
-        prose-strong:text-stone-800
-        prose-blockquote:border-l-iris/40 prose-blockquote:bg-iris-50/30 prose-blockquote:rounded-r-lg prose-blockquote:py-3 prose-blockquote:px-4 prose-blockquote:not-italic
-      ">
-        <Content />
-      </article>
+      <div class="flex gap-12">
 
-    </main>
+        <!-- Sidebar (desktop) -->
+        <nav class="hidden lg:block w-52 shrink-0">
+          <div class="sticky top-20 space-y-8">
+
+            <!-- Table of contents -->
+            {tocHeadings.length > 0 && (
+              <div>
+                <p class="text-[10px] font-mono uppercase tracking-widest text-stone-500 mb-3">On this page</p>
+                <ul class="space-y-1.5 border-l border-stone-200">
+                  {tocHeadings.map((h) => (
+                    <li>
+                      <a
+                        href={`#${h.slug}`}
+                        class="block pl-3 text-[13px] text-stone-500 hover:text-iris hover:border-l-iris border-l-2 border-transparent -ml-[1px] transition-colors leading-snug py-0.5"
+                      >
+                        {h.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <!-- Recent posts -->
+            {allPosts.length > 1 && (
+              <div>
+                <p class="text-[10px] font-mono uppercase tracking-widest text-stone-500 mb-3">Recent posts</p>
+                <ul class="space-y-1.5 border-l border-stone-200">
+                  {allPosts.map((p) => (
+                    <li>
+                      <a
+                        href={`/blog/${p.id}`}
+                        class:list={[
+                          'block pl-3 text-[13px] border-l-2 -ml-[1px] transition-colors leading-snug py-0.5',
+                          p.id === post.id
+                            ? 'text-iris font-bold border-l-iris'
+                            : 'text-stone-500 hover:text-iris hover:border-l-iris border-transparent',
+                        ]}
+                      >
+                        {p.data.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+          </div>
+        </nav>
+
+        <!-- Main content -->
+        <main class="min-w-0 max-w-[720px]">
+
+          {post.data.image && (
+            <div class="mb-10 -mx-6 sm:mx-0 sm:rounded-lg overflow-hidden">
+              <img
+                src={post.data.image}
+                alt=""
+                class="w-full h-[280px] sm:h-[340px] object-cover"
+              />
+            </div>
+          )}
+
+          <!-- Mobile: TOC -->
+          {tocHeadings.length > 0 && (
+            <nav class="lg:hidden mb-10 pb-6 border-b border-stone-200/50">
+              <p class="text-[10px] font-mono uppercase tracking-widest text-stone-500 mb-3">On this page</p>
+              <div class="flex flex-wrap gap-x-4 gap-y-1">
+                {tocHeadings.map((h) => (
+                  <a
+                    href={`#${h.slug}`}
+                    class="text-[13px] text-stone-500 hover:text-iris transition-colors"
+                  >
+                    {h.text}
+                  </a>
+                ))}
+              </div>
+            </nav>
+          )}
+
+          <!-- Content -->
+          <article class="prose prose-stone max-w-none
+            prose-headings:font-bold prose-headings:text-stone-900
+            prose-h2:text-xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:pt-6 prose-h2:border-t prose-h2:border-stone-200/50
+            prose-h3:text-base prose-h3:mt-6 prose-h3:mb-3
+            prose-p:text-[15px] prose-p:leading-relaxed prose-p:text-stone-600
+            prose-li:text-[15px] prose-li:text-stone-600
+            prose-a:text-iris prose-a:no-underline hover:prose-a:underline
+            prose-strong:text-stone-800
+            prose-blockquote:border-l-iris/40 prose-blockquote:bg-iris-50/30 prose-blockquote:rounded-r-lg prose-blockquote:py-3 prose-blockquote:px-4 prose-blockquote:not-italic
+          ">
+            <Content />
+          </article>
+
+        </main>
+
+      </div>
+    </div>
 </Layout>
