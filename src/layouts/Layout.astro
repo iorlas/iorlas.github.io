@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
@@ -51,5 +52,6 @@ const { title, description = 'Denis Tomilin — AI Architect, Enterprise Consult
 
     <Nav />
     <slot />
+    <Footer />
   </body>
 </html>

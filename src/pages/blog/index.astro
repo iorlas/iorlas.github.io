@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+---
+
+<Layout title="Blog — Denis Tomilin" description="Field notes on AI, engineering leadership, and building things that work.">
+    <main class="max-w-[720px] mx-auto px-6 pt-14 sm:pt-20 pb-16">
+
+      <!-- Back link -->
+      <a href="/" class="text-sm font-mono text-stone-500 hover:text-iris transition-colors mb-8 inline-block">&larr; Home</a>
+
+      <h1 class="text-3xl font-bold text-stone-900 mb-3">Blog</h1>
+      <p class="text-[15px] text-stone-500 leading-relaxed mb-12">
+        Field notes on AI, engineering leadership, and building things that work.
+      </p>
+
+      {posts.length === 0 && (
+        <p class="text-[15px] text-stone-400 italic">No posts yet. Stay tuned.</p>
+      )}
+
+      <div class="space-y-6">
+        {posts.map((post) => (
+          <a
+            href={`/blog/${post.id}`}
+            class="block bg-white border border-stone-200 rounded-lg px-5 py-4 hover:border-iris/30 transition-colors group"
+          >
+            <div class="flex items-baseline justify-between gap-4 mb-1">
+              <h2 class="text-[15px] font-semibold text-stone-800 group-hover:text-iris transition-colors">
+                {post.data.title}
+              </h2>
+              <time class="text-[13px] font-mono text-stone-400 shrink-0">
+                {post.data.date.toISOString().slice(0, 10)}
+              </time>
+            </div>
+            {post.data.description && (
+              <p class="text-[14px] text-stone-500 leading-relaxed">{post.data.description}</p>
+            )}
+            {post.data.tags.length > 0 && (
+              <div class="flex gap-2 mt-2">
+                {post.data.tags.map((tag) => (
+                  <span class="text-[11px] font-mono text-iris bg-iris/8 rounded-full px-2 py-0.5">{tag}</span>
+                ))}
+              </div>
+            )}
+          </a>
+        ))}
+      </div>
+
+    </main>
+</Layout>

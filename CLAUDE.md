@@ -62,6 +62,16 @@ Located in `_archive/` after migration:
 - `guides/it-squad-ops/` — 9 files of real delivery methodology content
 - `guides/travel/` — Turkey and Georgia travel notes (lower priority)
 
+## Blog Publishing Contract
+
+An automated script creates blog posts in `src/content/blog/{year}/{month}/{date}-{slug}.md`.
+
+Example: `src/content/blog/2026/03/2026-03-25-how-ai-agents-remember.md`
+
+Frontmatter: `title`, `date`, `description`, `tags`. Optional: `draft` (default false).
+URLs: `/blog/{date}-{slug}` (folder path stripped via `generateId` in content config).
+RSS feed: `/rss.xml`
+
 ## Do NOT
 
 - Add excessive JavaScript or client-side frameworks

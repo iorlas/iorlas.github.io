@@ -25,4 +25,19 @@ const trainings = defineCollection({
   }),
 });
 
-export const collections = { travel, trainings };
+const blog = defineCollection({
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/content/blog',
+    generateId: ({ entry }) => entry.split('/').pop()!.replace(/\.md$/, ''),
+  }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    description: z.string().default(''),
+    tags: z.array(z.string()).default([]),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { travel, trainings, blog };
