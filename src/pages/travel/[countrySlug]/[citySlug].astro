@@ -1,18 +1,20 @@
 ---
-import { getCollection, render } from 'astro:content';
-import Layout from '../../../layouts/Layout.astro';
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const guides = await getCollection('travel', ({ data }) => !data.draft);
+  const guides = await getCollection("travel", ({ data }) => !data.draft);
   return guides.map((guide) => ({
-    params: { countrySlug: guide.data.countrySlug, citySlug: guide.data.citySlug },
+    params: {
+      countrySlug: guide.data.countrySlug,
+      citySlug: guide.data.citySlug,
+    },
     props: { guide },
   }));
 }
 
 const { guide } = Astro.props;
 const { Content, headings } = await render(guide);
-const tocHeadings = headings.filter((h) => h.depth === 2);
+const _tocHeadings = headings.filter((h) => h.depth === 2);
 ---
 
 <Layout title={`${guide.data.title}, ${guide.data.country} — Travel Guide`} description={`Practical travel cheatsheet for ${guide.data.title}, ${guide.data.country}`}>

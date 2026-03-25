@@ -1,8 +1,7 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import { getCollection } from "astro:content";
 
-const docs = await getCollection('trainings');
+const docs = await getCollection("trainings");
 
 // Group by program
 const byProgram = new Map<string, typeof docs>();
@@ -13,16 +12,19 @@ for (const doc of docs) {
 }
 
 // Separate programs and guides, sort each group
-const allGroups = [...byProgram.entries()]
-  .map(([program, items]) => ({
-    program,
-    type: items[0].data.type,
-    docs: items.sort((a, b) => a.data.order - b.data.order),
-  }));
+const allGroups = [...byProgram.entries()].map(([program, items]) => ({
+  program,
+  type: items[0].data.type,
+  docs: items.sort((a, b) => a.data.order - b.data.order),
+}));
 
-const programs = allGroups.filter(g => g.type === 'program').sort((a, b) => a.program.localeCompare(b.program));
-const guides = allGroups.filter(g => g.type === 'guide').sort((a, b) => a.program.localeCompare(b.program));
-const sorted = [...programs, ...guides];
+const programs = allGroups
+  .filter((g) => g.type === "program")
+  .sort((a, b) => a.program.localeCompare(b.program));
+const guides = allGroups
+  .filter((g) => g.type === "guide")
+  .sort((a, b) => a.program.localeCompare(b.program));
+const _sorted = [...programs, ...guides];
 ---
 
 <Layout title="AI Trainings — Denis Tomilin" description="Hands-on training programs for AI-assisted development. Open source.">

@@ -1,12 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import { getCollection } from "astro:content";
 
 const now = new Date();
-const posts = (await getCollection('blog'))
+const _posts = (await getCollection("blog"))
   .filter((post) => !post.data.draft && post.data.date <= now)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-
 ---
 
 <Layout title="Blog — Denis Tomilin" description="Field notes on AI, engineering leadership, and building things that work.">
