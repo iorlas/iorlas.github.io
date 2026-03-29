@@ -15,7 +15,7 @@ const svgPath = join(
   "node_modules/lucide-static/icons",
   `${name}.svg`,
 );
-const _svgContent = readFileSync(svgPath, "utf-8")
+const svgContent = readFileSync(svgPath, "utf-8")
   .replace(/width="[^"]*"/, `width="${size}"`)
   .replace(/height="[^"]*"/, `height="${size}"`)
   .replace("<svg", `<svg class="${className}"`);

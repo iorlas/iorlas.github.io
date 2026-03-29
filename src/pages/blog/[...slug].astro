@@ -1,4 +1,5 @@
 ---
+import Layout from "../../layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -11,10 +12,10 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
-const _tocHeadings = headings.filter((h) => h.depth === 2);
+const tocHeadings = headings.filter((h) => h.depth === 2);
 
 const now = new Date();
-const _allPosts = (await getCollection("blog"))
+const allPosts = (await getCollection("blog"))
   .filter((p) => !p.data.draft && p.data.date <= now)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 8);

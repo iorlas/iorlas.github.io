@@ -1,4 +1,5 @@
 ---
+import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const guides = await getCollection("travel", ({ data }) => !data.draft);
@@ -12,7 +13,7 @@ for (const guide of guides) {
 }
 
 // Sort countries, then cities within each
-const _countries = [...byCountry.entries()]
+const countries = [...byCountry.entries()]
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([country, cities]) => ({
     country,
