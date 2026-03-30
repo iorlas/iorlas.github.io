@@ -98,19 +98,6 @@ import Icon from "../components/Icon.astro";
         <section class="md:w-1/2">
           <h2 class="text-xs font-mono uppercase tracking-widest text-stone-500 mb-5">Projects</h2>
           <div class="space-y-8">
-            <a href="https://github.com/iorlas/iorlas-kay" class="flex items-start gap-4 group" target="_blank" rel="noopener">
-              <div class="shrink-0 w-9 h-9 rounded-lg bg-stone-100 flex items-center justify-center mt-0.5">
-                <Icon name="brain" size={17} class="text-stone-500" />
-              </div>
-              <div>
-                <p class="text-[15px] font-semibold text-stone-800 group-hover:text-iris transition-colors flex items-center gap-1.5">
-                  iorlas-kay
-                  <Icon name="arrow-up-right" size={12} class="text-stone-500 group-hover:text-iris transition-colors" />
-                </p>
-                <p class="text-[13px] text-stone-500 leading-relaxed mt-1">Personal knowledge OS — semantic search, entity resolution, structured capture. Built with Claude Code.</p>
-              </div>
-            </a>
-
             <a href="https://github.com/iorlas/iorlas-brainstorm" class="flex items-start gap-4 group" target="_blank" rel="noopener">
               <div class="shrink-0 w-9 h-9 rounded-lg bg-stone-100 flex items-center justify-center mt-0.5">
                 <Icon name="lightbulb" size={17} class="text-stone-500" />
@@ -123,6 +110,47 @@ import Icon from "../components/Icon.astro";
                 <p class="text-[13px] text-stone-500 leading-relaxed mt-1">Decision coaching skill for Claude Code. Detects your reasoning pattern and applies the right technique.</p>
               </div>
             </a>
+
+            <a href="https://github.com/agentic-eng/a2db" class="flex items-start gap-4 group" target="_blank" rel="noopener">
+              <div class="shrink-0 w-9 h-9 rounded-lg bg-stone-100 flex items-center justify-center mt-0.5">
+                <Icon name="database" size={17} class="text-stone-500" />
+              </div>
+              <div>
+                <p class="text-[15px] font-semibold text-stone-800 group-hover:text-iris transition-colors flex items-center gap-1.5">
+                  a2db CLI & MCP
+                  <Icon name="arrow-up-right" size={12} class="text-stone-500 group-hover:text-iris transition-colors" />
+                </p>
+                <p class="text-[13px] text-stone-500 leading-relaxed mt-1">Agent-to-Database — CLI and MCP server for AI agents to query databases.</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/agentic-eng/agent-harness" class="flex items-start gap-4 group" target="_blank" rel="noopener">
+              <div class="shrink-0 w-9 h-9 rounded-lg bg-stone-100 flex items-center justify-center mt-0.5">
+                <Icon name="shield-check" size={17} class="text-stone-500" />
+              </div>
+              <div>
+                <p class="text-[15px] font-semibold text-stone-800 group-hover:text-iris transition-colors flex items-center gap-1.5">
+                  agent-harness
+                  <span class="text-[10px] font-mono bg-amber-100 text-amber-700 border border-amber-200 rounded px-1.5 py-0.5 font-semibold">WIP</span>
+                  <Icon name="arrow-up-right" size={12} class="text-stone-500 group-hover:text-iris transition-colors" />
+                </p>
+                <p class="text-[13px] text-stone-500 leading-relaxed mt-1">AI-first harness engineering — deterministic controls for AI agents.</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/iorlas/iorlas-kay" class="flex items-start gap-4 group" target="_blank" rel="noopener">
+              <div class="shrink-0 w-9 h-9 rounded-lg bg-stone-100 flex items-center justify-center mt-0.5">
+                <Icon name="brain" size={17} class="text-stone-500" />
+              </div>
+              <div>
+                <p class="text-[15px] font-semibold text-stone-800 group-hover:text-iris transition-colors flex items-center gap-1.5">
+                  iorlas-kay
+                  <span class="text-[10px] font-mono bg-amber-100 text-amber-700 border border-amber-200 rounded px-1.5 py-0.5 font-semibold">WIP</span>
+                  <Icon name="arrow-up-right" size={12} class="text-stone-500 group-hover:text-iris transition-colors" />
+                </p>
+                <p class="text-[13px] text-stone-500 leading-relaxed mt-1">Personal knowledge OS — semantic search, entity resolution, structured capture. Built with Claude Code.</p>
+              </div>
+            </a>
           </div>
         </section>
 
@@ -130,31 +158,50 @@ import Icon from "../components/Icon.astro";
         <section class="md:w-1/2">
           <h2 class="text-xs font-mono uppercase tracking-widest text-stone-500 mb-5">Publications</h2>
           <div class="space-y-8">
-            <a href="https://www.dataart.team/articles/guide-to-agentic-ai-autonomous-systems" class="flex items-start gap-4 group" target="_blank" rel="noopener">
+            <div class="flex items-start gap-4">
               <div class="shrink-0 w-9 h-9 rounded-lg bg-stone-100 flex items-center justify-center mt-0.5">
                 <Icon name="pen-line" size={17} class="text-stone-500" />
               </div>
               <div>
-                <p class="text-[15px] font-semibold text-stone-800 group-hover:text-iris transition-colors">
-                  AI Agents: Cutting Through the Noise
-                </p>
-                <p class="text-[13px] text-stone-500 leading-relaxed mt-1">A practical guide to Agentic AI and autonomous systems.</p>
-                <p class="text-[12px] font-mono text-stone-500 mt-1">Oct 2025 · DataArt</p>
+                <a href="https://www.dataart.team/articles/ai-technical-debt-future-of-programming-denis-tomilin" class="group" target="_blank" rel="noopener">
+                  <p class="text-[15px] font-semibold text-stone-800 group-hover:text-iris transition-colors">
+                    AI Technical Debt: Future of Programming
+                  </p>
+                </a>
+                <p class="text-[13px] text-stone-500 leading-relaxed mt-1">How AI-accelerated code generation creates technical debt by enabling developers to skip architectural decisions.</p>
+                <p class="text-[12px] font-mono text-stone-500 mt-1">Mar 2026 · DataArt · <a href="https://www.dataart.team/articles/ai-technical-debt-future-of-programming-denis-tomilin" class="text-iris hover:underline" target="_blank" rel="noopener">Link</a> / <a href="/publications/ai-technical-debt-future-of-programming.pdf" class="text-iris hover:underline">PDF</a></p>
               </div>
-            </a>
+            </div>
 
-            <a href="https://www.healthcarebusinesstoday.com/superbacteria-the-war-were-going-to-lose-without-ai-and-big-data/" class="flex items-start gap-4 group" target="_blank" rel="noopener">
+            <div class="flex items-start gap-4">
               <div class="shrink-0 w-9 h-9 rounded-lg bg-stone-100 flex items-center justify-center mt-0.5">
                 <Icon name="pen-line" size={17} class="text-stone-500" />
               </div>
               <div>
-                <p class="text-[15px] font-semibold text-stone-800 group-hover:text-iris transition-colors">
-                  Superbacteria: The War We're Going to Lose Without AI and Big Data
-                </p>
-                <p class="text-[13px] text-stone-500 leading-relaxed mt-1">On AI in the fight against antimicrobial resistance.</p>
-                <p class="text-[12px] font-mono text-stone-500 mt-1">2020 · Healthcare Business Today</p>
+                <a href="https://www.dataart.team/articles/guide-to-agentic-ai-autonomous-systems" class="group" target="_blank" rel="noopener">
+                  <p class="text-[15px] font-semibold text-stone-800 group-hover:text-iris transition-colors">
+                    AI Agents: Cutting Through the Noise
+                  </p>
+                </a>
+                <p class="text-[13px] text-stone-500 leading-relaxed mt-1">A practical guide to Agentic AI and autonomous systems.</p>
+                <p class="text-[12px] font-mono text-stone-500 mt-1">Oct 2025 · DataArt · <a href="https://www.dataart.team/articles/guide-to-agentic-ai-autonomous-systems" class="text-iris hover:underline" target="_blank" rel="noopener">Link</a> / <a href="/publications/guide-to-agentic-ai-autonomous-systems.pdf" class="text-iris hover:underline">PDF</a></p>
               </div>
-            </a>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="shrink-0 w-9 h-9 rounded-lg bg-stone-100 flex items-center justify-center mt-0.5">
+                <Icon name="pen-line" size={17} class="text-stone-500" />
+              </div>
+              <div>
+                <a href="https://www.healthcarebusinesstoday.com/superbacteria-the-war-were-going-to-lose-without-ai-and-big-data/" class="group" target="_blank" rel="noopener">
+                  <p class="text-[15px] font-semibold text-stone-800 group-hover:text-iris transition-colors">
+                    Superbacteria: The War We're Going to Lose Without AI and Big Data
+                  </p>
+                </a>
+                <p class="text-[13px] text-stone-500 leading-relaxed mt-1">On AI in the fight against antimicrobial resistance.</p>
+                <p class="text-[12px] font-mono text-stone-500 mt-1">Aug 2023 · Healthcare Business Today · <a href="https://www.healthcarebusinesstoday.com/superbacteria-the-war-were-going-to-lose-without-ai-and-big-data/" class="text-iris hover:underline" target="_blank" rel="noopener">Link</a> / <a href="/publications/superbacteria-the-war-were-going-to-lose-without-ai-and-big-data.pdf" class="text-iris hover:underline">PDF</a></p>
+              </div>
+            </div>
           </div>
         </section>
 
