@@ -2,6 +2,7 @@
 title: "Anthropic Mythos: What 3,000 Leaked Documents Actually Tell Us"
 date: 2026-04-07
 description: "Two separate Anthropic leaks in five days. A new model tier above Opus. An always-on agent that dreams at night. What Mythos, KAIROS, and 512K lines of source code reveal about the next generation of AI."
+image: /blog/mythos-kairos-hero.png
 draft: false
 tags:
   - nb_research
